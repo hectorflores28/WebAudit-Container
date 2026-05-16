@@ -30,7 +30,7 @@ docker build -t web-audit .
 # 4. Ejecutar en un contenedor aislado
 
 ```bash
-docker run -d -p 8080:80 --name sitio-auditoria web-audit
+docker run -d -p 8080:80 --name web-audit web-audit
 ```
 
 # 5. Escanear vulnerabilidades
@@ -40,13 +40,13 @@ Como Nikto ya está incluido en la imagen, puedes ejecutar los escaneos directam
 ### Escaneo con Nikto (Interno)
 
 ```bash
-docker exec -it sitio-auditoria nikto -h localhost
+docker exec -it web-audit nikto -h localhost
 ```
 
 ### Escaneo con Nikto (Salida a archivo)
 
 ```bash
-docker exec -it sitio-auditoria nikto -h localhost -o /usr/share/nginx/html/scan-report.html -Format htm
+docker exec -it web-audit nikto -h localhost -o /usr/share/nginx/html/scan-report.html -Format htm
 ```
 
 ### Otras herramientas (Externas)
@@ -62,5 +62,5 @@ docker run -it --rm -p 8080:8080 -v /ruta/a/tu/web-audit:/zap/wrk owasp/zap2dock
 
 ```bash
 # Escanea archivos peligrosos o configuraciones debiles
-docker exec -it sitio-auditoria nikto -h localhost
+docker exec -it web-audit nikto -h localhost
 ```
