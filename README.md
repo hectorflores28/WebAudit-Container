@@ -29,6 +29,16 @@ docker build -t web-audit .
 
 # 4. Ejecutar en un contenedor aislado
 
+Puedes ejecutarlo de dos formas:
+
+### Opción A: Con Docker Compose (Recomendado)
+
+```bash
+docker-compose up -d
+```
+
+### Opción B: Con Docker CLI
+
 ```bash
 docker run -d -p 8080:80 --name web-audit web-audit
 ```
