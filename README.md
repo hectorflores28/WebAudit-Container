@@ -4,13 +4,13 @@ Contenedor Docker para auditoría web y pentesting local seguro. Descarga répli
 # 1. Descargar el sitio web
 
 ```bash
-wget --mirror --page-requisites --adjust-extension --convert-links --no-parent -w 2 https://tusitio.com
+wget --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" -e robots=off --mirror --page-requisites --adjust-extension --convert-links --no-parent -w 2 https://tusitio.com
 ```
 
 ## Descargar en carpeta especifica
 
 ```bash
-wget --mirror -p --convert-links -P ./destination-path https://tusitio.com
+wget --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" -e robots=off --mirror -p --convert-links -P ./destination-path https://tusitio.com
 ```
 
 # 2. Crear el Dockerfile
