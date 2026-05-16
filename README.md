@@ -13,6 +13,14 @@ wget --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 
 wget --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" -e robots=off --mirror -p --convert-links -P ./destination-path https://tusitio.com
 ```
 
+## Manejo de Sitios Dinámicos (SPA)
+
+Si el sitio usa frameworks como Angular, Vue o React, es probable que veas enlaces con llaves `{{variable}}`. `wget` intentará descargarlos como si fueran archivos reales. Para evitarlo, usa el filtro de expresiones regulares:
+
+```bash
+wget --user-agent="..." -e robots=off --mirror -p --convert-links --reject-regex "\{\{.*\}\}" -P ./destination-path https://tusitio.com
+```
+
 # 2. Crear el Dockerfile
 
 ```bash
