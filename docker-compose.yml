@@ -1,0 +1,8 @@
+services:
+  web-audit:
+    build: .
+    container_name: web-audit
+    ports:
+      - "8080:80"
+    volumes:
+      - ./destination-path:/usr/share/nginx/html
